@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deploy
+  labels:
+    spring: ecom  
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      spring: ecom
+  template:
+    metadata:
+      name: mysql-pod
+      labels:
+        spring: ecom
+    spec: 
+      containers:
+        - name: mysql-cont
+          image: mysql:8
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "root"
+            - name: MYSQL_USER
+              value: "root"
+            - name: MYSQL_PASSWORD
+              value: "root"
+            - name: MYSQL_DATABASE
+              value: "ecommercedb"
+          volumeMounts:
+            - name: mysql-vol
+              mountPath: /data
+      volumes:
+        - name: mysql-vol
+          persistentVolumeClaim:
+            claimName: mysql-pvc
+                    
+

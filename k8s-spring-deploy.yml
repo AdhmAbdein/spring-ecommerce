@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-deploy
+  labels:
+    spring: ecom
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      spring: ecom
+  template:
+    metadata:
+      name: spring-pod
+      labels: 
+        spring: ecom
+    spec:
+      containers:
+        - name: spring-cont
+          image: adhmabdein/myspringecomimg
+          ports:
+            - containerPort: 8009
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-service:3306/ecommercedb
+            - name: SPRING_DATASOURCE_USERNAME  
+              value: "root"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "root"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: update
+            - name: SPRING_JPA_SHOW_SQL
+              value: true    
