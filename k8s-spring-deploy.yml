@@ -22,7 +22,7 @@ spec:
             - containerPort: 8009
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql-service:3306/ecommercedb
+              value: "jdbc:mysql://mysql-service:3306/ecommercedb"
             - name: SPRING_DATASOURCE_USERNAME  
               value: "root"
             - name: SPRING_DATASOURCE_PASSWORD
@@ -30,4 +30,4 @@ spec:
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: update
             - name: SPRING_JPA_SHOW_SQL
-              value: true    
+              value: "true" 
