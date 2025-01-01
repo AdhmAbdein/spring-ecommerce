@@ -6,5 +6,5 @@ COPY ./E-Commerce-Backend /app
 
 EXPOSE 8009
 
-CMD ["java", "-jar", "springboot-app.jar"]
+CMD ["java", "-jar", "maven-wrapper.jar"]
 
