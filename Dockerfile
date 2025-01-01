@@ -6,5 +6,5 @@ COPY ./E-Commerce-Backend /app
 
 EXPOSE 8009
 
-CMD ["java", "-jar", "maven-wrapper.jar"]
+CMD ["java", "-jar", "/app/E-Commerce-Backend/.mvn/wrappe/mraven-wrapper.jar"]
 
