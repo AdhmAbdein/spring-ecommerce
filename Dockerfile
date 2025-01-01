@@ -9,6 +9,8 @@ COPY ./E-Commerce-Backend/.mvn ./.mvn
 COPY ./E-Commerce-Backend/pom.xml .
 COPY ./E-Commerce-Backend/src ./src
 
+RUN chmod +x mvnw
+
 # Build the application using the Maven wrapper
 RUN ./mvnw clean package -DskipTests
 
