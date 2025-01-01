@@ -8,7 +8,7 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
-      ports: 8009
+      port: 8009
       nodePort: 30011
       targetPort: 8009  
   
