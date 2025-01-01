@@ -6,6 +6,6 @@ spec:
   capacity:
     storage: 2Gi
   accessModes:
-    - ReadWtriteMany
+    - ReadWriteMany
   hostPath:
     path: "/adhamjenkins"    
