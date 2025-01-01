@@ -4,11 +4,10 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-COPY ./mvnw .
-COPY ./.mvn ./.mvn
-COPY ./pom.xml .
-
-COPY ./src ./src
+COPY ./E-Commerce-Backend/mvnw .
+COPY ./E-Commerce-Backend/.mvn ./.mvn
+COPY ./E-Commerce-Backend/pom.xml .
+COPY ./E-Commerce-Backend/src ./src
 
 # Build the application using the Maven wrapper
 RUN ./mvnw clean package -DskipTests
